@@ -97,10 +97,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="5VX-hd-0Yl" customClass="DragDestinationView" customModule="Iconer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="440" height="230"/>
+                                <rect key="frame" x="20" y="57" width="440" height="193"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-6g-bl4">
-                                        <rect key="frame" x="18" y="101" width="404" height="27"/>
+                                        <rect key="frame" x="18" y="83" width="404" height="27"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop your icon assets here" id="JFU-ed-4Qu">
                                             <font key="font" metaFont="system" size="22"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -117,16 +117,48 @@
                                     <outlet property="messageLabel" destination="XAx-6g-bl4" id="a7h-bj-9rC"/>
                                 </connections>
                             </customView>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sTZ-Di-cma">
+                                <rect key="frame" x="116" y="17" width="76" height="22"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="PmG-ol-sAG" id="PM6-qf-0VC">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="QAG-g9-MGg">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="PmG-ol-sAG"/>
+                                            <menuItem title="Item 2" id="BAw-Vl-mv3"/>
+                                            <menuItem title="Item 3" id="WIJ-Hh-Lxm"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="onPopupButtonValueChanged:" target="XfG-lQ-9wD" id="GZ6-ba-uPI"/>
+                                </connections>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4Mq-lG-3Pn">
+                                <rect key="frame" x="18" y="20" width="94" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuration: " id="TRv-Mw-VBC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="sTZ-Di-cma" firstAttribute="top" secondItem="5VX-hd-0Yl" secondAttribute="bottom" constant="20" id="68q-OI-F50"/>
                             <constraint firstAttribute="trailing" secondItem="5VX-hd-0Yl" secondAttribute="trailing" constant="20" id="6fi-0k-Nav"/>
+                            <constraint firstItem="4Mq-lG-3Pn" firstAttribute="centerY" secondItem="sTZ-Di-cma" secondAttribute="centerY" id="7hS-x2-d1j"/>
                             <constraint firstItem="5VX-hd-0Yl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="AuC-zh-2o7"/>
-                            <constraint firstAttribute="bottom" secondItem="5VX-hd-0Yl" secondAttribute="bottom" constant="20" id="Ki3-KB-eoe"/>
+                            <constraint firstItem="sTZ-Di-cma" firstAttribute="leading" secondItem="4Mq-lG-3Pn" secondAttribute="trailing" constant="8" id="Bn7-ou-VCT"/>
+                            <constraint firstItem="4Mq-lG-3Pn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="TPv-z4-ZQQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sTZ-Di-cma" secondAttribute="trailing" constant="20" symbolic="YES" id="mq0-pT-UYc"/>
+                            <constraint firstAttribute="bottom" secondItem="4Mq-lG-3Pn" secondAttribute="bottom" constant="20" id="rzI-0T-cYo"/>
                             <constraint firstItem="5VX-hd-0Yl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="tI5-Ke-uFR"/>
+                            <constraint firstAttribute="bottom" secondItem="sTZ-Di-cma" secondAttribute="bottom" constant="20" id="zaI-Ge-Lza"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dragView" destination="5VX-hd-0Yl" id="qmC-5C-Tej"/>
+                        <outlet property="popupButton" destination="sTZ-Di-cma" id="TZN-hP-cBf"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

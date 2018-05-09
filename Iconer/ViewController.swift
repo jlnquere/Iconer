@@ -10,17 +10,29 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    let imagesProcessor = ImageProcessor()
+    var imagesProcessor = ImageProcessor(type: .ios)
     @IBOutlet weak var dragView: DragDestinationView!
+    @IBOutlet weak var popupButton: NSPopUpButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         dragView.setup()
         dragView.delegate = self
+        
+        popupButton.removeAllItems()
+        popupButton.addItems(withTitles: AppIconSetConfig.allValues.map({$0.description}))
+        popupButton.selectItem(at: 0)
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    @IBAction func onPopupButtonValueChanged(_ sender: Any) {
+        let selectedIndex = popupButton.indexOfSelectedItem
+        
+        guard selectedIndex < AppIconSetConfig.allValues.count else {
+                return
+        }
+        let config = AppIconSetConfig.allValues[selectedIndex]
+        if  config != imagesProcessor.config  {
+            imagesProcessor = ImageProcessor(type: config)
+            print("Set \(config)")
         }
     }
     

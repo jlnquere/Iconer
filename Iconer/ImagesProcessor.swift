@@ -11,15 +11,22 @@ import AppKit
 
 class ImageProcessor {
     
-    let appIconSetName = "AppIcon.appiconset"
-    let appIconBaseFileName = "appicon-"
+    private let appIconSetName = "AppIcon.appiconset"
+    private let appIconBaseFileName = "appicon-"
     
-    let fileManager = FileManager()
+    private let fileManager = FileManager()
     
-    var inputSizes = [URL:CGFloat]()
-    let expectedSizesNames = ["29@2x", "40", "57@2x", "76", "20", "40@2x", "60", "76@2x", "20@2x", "40@3x", "60@2x", "83.5@2x", "29", "50", "60@3x", "29@2x", "50@2x", "72", "29@3x", "57", "72@2x", "512@2x"]
+    private var inputSizes = [URL:CGFloat]()
+    private var inputImages = [IconSize:URL]()
     
-    var inputImages = [IconSize:URL]()
+     let config:AppIconSetConfig
+    
+    
+    init(type config:AppIconSetConfig) {
+        self.config = config
+    }
+    
+    
     
     func doesAppIconSetExists(at url:URL) -> Bool {
         let appIconSetURL = url.appendingPathComponent(appIconSetName)
@@ -116,7 +123,7 @@ class ImageProcessor {
     private func saveContentJSON(at url:URL) throws {
         let contentFile = url.appendingPathComponent("Contents.json").path
         
-        guard let contentJSONPath = Bundle.main.url(forResource: "appiconset_content", withExtension: "json") else {
+        guard let contentJSONPath = config.contentJSONPath else {
             throw "Unable to get appiconset_content path"
         }
         
@@ -139,11 +146,10 @@ class ImageProcessor {
             }
         })
     
-        let expectedSizes = self.expectedSizesNames.compactMap({IconSize.init(fromFileSizeName: $0)})
     
         var missingSizes = [IconSize]()
         
-        expectedSizes.forEach { (size) in
+        config.expectedSizes.forEach { (size) in
             if let url = self.searchImageCandidate(for: size) {
                 inputImages[size] = url
             } else {

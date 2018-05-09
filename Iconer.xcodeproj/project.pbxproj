@@ -12,12 +12,14 @@
 		9B9EEC29209B4353005B843C /* ImagesProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEC28209B4353005B843C /* ImagesProcessor.swift */; };
 		9B9EEC31209B5E66005B843C /* IconerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEC30209B5E66005B843C /* IconerTests.swift */; };
 		9B9EEC39209C72EF005B843C /* IconSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEC38209C72EF005B843C /* IconSize.swift */; };
-		9B9EEC3B209C9301005B843C /* appiconset_content.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9EEC3A209C9301005B843C /* appiconset_content.json */; };
+		9B9EEC3B209C9301005B843C /* appiconset_content-iOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9EEC3A209C9301005B843C /* appiconset_content-iOS.json */; };
 		9BB647992088732E0026EE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB647982088732E0026EE46 /* AppDelegate.swift */; };
 		9BB6479B2088732E0026EE46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6479A2088732E0026EE46 /* ViewController.swift */; };
 		9BB6479D2088732F0026EE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6479C2088732F0026EE46 /* Assets.xcassets */; };
 		9BB647A02088732F0026EE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6479E2088732F0026EE46 /* Main.storyboard */; };
 		9BBB212A20A334E4008B95AB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB212920A334E4008B95AB /* Error.swift */; };
+		9BBB212D20A33F3D008B95AB /* appiconset_content-macOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BBB212C20A33F3D008B95AB /* appiconset_content-macOS.json */; };
+		9BBB212F20A33F83008B95AB /* AppIconSetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB212E20A33F83008B95AB /* AppIconSetConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		9B9EEC30209B5E66005B843C /* IconerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconerTests.swift; sourceTree = "<group>"; };
 		9B9EEC32209B5E66005B843C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B9EEC38209C72EF005B843C /* IconSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSize.swift; sourceTree = "<group>"; };
-		9B9EEC3A209C9301005B843C /* appiconset_content.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = appiconset_content.json; sourceTree = "<group>"; };
+		9B9EEC3A209C9301005B843C /* appiconset_content-iOS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "appiconset_content-iOS.json"; sourceTree = "<group>"; };
 		9BB647952088732E0026EE46 /* Iconer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iconer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB647982088732E0026EE46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BB6479A2088732E0026EE46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		9BB647A12088732F0026EE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BB647A22088732F0026EE46 /* Iconer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Iconer.entitlements; sourceTree = "<group>"; };
 		9BBB212920A334E4008B95AB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		9BBB212C20A33F3D008B95AB /* appiconset_content-macOS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "appiconset_content-macOS.json"; sourceTree = "<group>"; };
+		9BBB212E20A33F83008B95AB /* AppIconSetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSetConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		9BB647972088732E0026EE46 /* Iconer */ = {
 			isa = PBXGroup;
 			children = (
+				9BBB212B20A33F29008B95AB /* Assets */,
 				9BBB212820A334D6008B95AB /* Utils */,
 				9BB647982088732E0026EE46 /* AppDelegate.swift */,
 				9BB6479A2088732E0026EE46 /* ViewController.swift */,
@@ -107,7 +112,7 @@
 				9B9EEC26209B3BBA005B843C /* DragDestinationView.swift */,
 				9B9EEC28209B4353005B843C /* ImagesProcessor.swift */,
 				9B9EEC38209C72EF005B843C /* IconSize.swift */,
-				9B9EEC3A209C9301005B843C /* appiconset_content.json */,
+				9BBB212E20A33F83008B95AB /* AppIconSetConfig.swift */,
 			);
 			path = Iconer;
 			sourceTree = "<group>";
@@ -119,6 +124,15 @@
 				9BBB212920A334E4008B95AB /* Error.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9BBB212B20A33F29008B95AB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9B9EEC3A209C9301005B843C /* appiconset_content-iOS.json */,
+				9BBB212C20A33F3D008B95AB /* appiconset_content-macOS.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,9 +223,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBB212D20A33F3D008B95AB /* appiconset_content-macOS.json in Resources */,
 				9BB6479D2088732F0026EE46 /* Assets.xcassets in Resources */,
 				9BB647A02088732F0026EE46 /* Main.storyboard in Resources */,
-				9B9EEC3B209C9301005B843C /* appiconset_content.json in Resources */,
+				9B9EEC3B209C9301005B843C /* appiconset_content-iOS.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +250,7 @@
 				9B9EEC27209B3BBA005B843C /* DragDestinationView.swift in Sources */,
 				9B9EEC39209C72EF005B843C /* IconSize.swift in Sources */,
 				9B9EEC29209B4353005B843C /* ImagesProcessor.swift in Sources */,
+				9BBB212F20A33F83008B95AB /* AppIconSetConfig.swift in Sources */,
 				9BBB212A20A334E4008B95AB /* Error.swift in Sources */,
 				9BB647992088732E0026EE46 /* AppDelegate.swift in Sources */,
 			);
